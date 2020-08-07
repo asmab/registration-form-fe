@@ -33,7 +33,7 @@ class Form extends Component {
                 fieldValidationErrors.email = emailValid ? '' : ' is invalid';
                 break;
             case 'password':
-                passwordValid = value.length >= 8;
+                passwordValid = value.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)
                 fieldValidationErrors.password = passwordValid ? '' : ' is invalid';
                 break;
             default:
